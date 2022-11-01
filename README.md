@@ -26,7 +26,8 @@ _____________________________________
 ### install
 You can install sanpy-unlimited-requests from source code (similar to installing original sanpy)
 ````
-git clone 
+git clone https://github.com/hifided/sanpy-unlimited-requests
+cd sanpy-unlimited-requests/
 python3 setup.py install
 ````
 ``.egg`` with sanpy source code will appear in python packages folder (``/usr/local/lib/python3.*/dist-packages/`` for Linux)
