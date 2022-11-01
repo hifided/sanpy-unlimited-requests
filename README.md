@@ -27,7 +27,7 @@ _____________________________________
 **Run-up:** delete ``san`` folder from python packages folder (*/usr/local/lib/python3.\*/dist-packages/* for Linux)
 
 You can install sanpy-unlimited-requests from source code (similar to installing original sanpy)
-````
+````bash
 git clone https://github.com/hifided/sanpy-unlimited-requests
 cd sanpy-unlimited-requests/
 python3 setup.py install
