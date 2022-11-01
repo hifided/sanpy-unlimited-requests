@@ -41,28 +41,7 @@ Installation complete. Now python can see ``import san`` package
 user1:passwd@111.222.333.44:8000
 55.66.77.8:8080
 ````
-Updated sanpy will retry request to the database through the proxy every time it reaches the SANAPI request limit.
-
-### source
-The only difference from the original sanpy in the ``graphql.py``:
-```python
-try:
-    response = requests.post(
-        SANBASE_GQL_HOST,
-        json={'query': gql_query_str},
-        headers=headers,
-        proxies=proxy_struct)
-except requests.exceptions.RequestException as e:
-    raise SanError('Error running query: ({})'.format(e))
-
-# status code 429 - request API limit, 404 - Not Found, 500 - Internal Server Error
-if counter > 0 and response.status_code in (404, 429, 500):
-    # change proxy if error
-    proxy_struct = get_new_proxy()
-    # proxies list next step
-    counter -= 1
-    continue
-```
+Updated sanpy will retry request to the database through the proxy from ``proxy.txt`` every time it reaches the SANAPI request limit.
 
 
 
